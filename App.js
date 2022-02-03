@@ -6,7 +6,7 @@ const githubRepo = process.env.GITHUB_REPO;
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Most recent commits for {githubOwner}/{githubRepo} </Text>
+      <Text>Most recent commits for {githubOwner}/{githubRepo}</Text>
     </View>
   );
 }
