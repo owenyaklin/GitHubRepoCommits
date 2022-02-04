@@ -27,7 +27,9 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <View><Text>Most recent commits for {githubOwner}/{githubRepo}</Text></View>
+      <View>
+        <Text>Most recent commits for {githubOwner}/{githubRepo}</Text>
+      </View>
       <FlatList
         data={commits}
         renderItem={renderItem}

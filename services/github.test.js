@@ -1,4 +1,4 @@
-import { getRepositoryCommits } from './github';
+import getRepositoryCommits from './github';
 
 const githubOwner = process.env.GITHUB_OWNER;
 const githubRepo = process.env.GITHUB_REPO;
