@@ -1,6 +1,6 @@
 import { Octokit } from "@octokit/core";
 
-const getRepositoryCommits = async (owner, repo) => {
+const getRepositoryCommits = async function (owner, repo) {
     const octokit = new Octokit();
     let resultArray = [];
     try {
@@ -22,4 +22,4 @@ const getRepositoryCommits = async (owner, repo) => {
     return resultArray;
 };
 
-module.exports = { getRepositoryCommits };
+export default getRepositoryCommits;
