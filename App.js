@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, FlatList } from 'react-native';
+import ListItem from "./components/ListItem";
 
 import getRepositoryCommits from './services/github';
 
@@ -18,9 +19,18 @@ export default function App() {
     setCommitsFeteched(true);
   }
 
+  const renderItem = ({ item }) => (
+    <ListItem item={item} />
+  );
+
   return (
     <View style={styles.container}>
-      <Text>Most recent commits for {githubOwner}/{githubRepo}</Text>
+      <View><Text>Most recent commits for {githubOwner}/{githubRepo}</Text></View>
+      <FlatList
+        data={commits}
+        renderItem={renderItem}
+        keyExtractor={item => item.hash}
+      />
     </View>
   );
 }
