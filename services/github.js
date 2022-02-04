@@ -4,11 +4,10 @@ const getRepositoryCommits = async function (owner, repo) {
     const octokit = new Octokit();
     let resultArray = [];
     try {
-        const response = await octokit.request("GET /repos/{owner}/{repo}/commits", {
+        const response = await octokit.request('GET /repos/{owner}/{repo}/commits', {
             owner: owner,
             repo: repo
         });
-        console.log(response);
         if (response.data) {
             resultArray = response.data.map(item => ({
                 hash: item.sha,
