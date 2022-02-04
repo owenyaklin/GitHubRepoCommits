@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { StyleSheet, Text, View, FlatList } from 'react-native';
+import Constants from 'expo-constants';
+
 import ListItem from "./components/ListItem";
 
 import getRepositoryCommits from './services/github';
@@ -40,6 +42,6 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
     alignItems: 'center',
-    padding: 5
+    paddingTop: Constants.statusBarHeight
   },
 });
