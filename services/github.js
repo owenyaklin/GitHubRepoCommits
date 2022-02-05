@@ -1,4 +1,5 @@
 import { Octokit } from "@octokit/core";
+import _ from 'lodash';
 
 const getRepositoryCommits = async function (owner, repo, pageSize = -1, pageNumber = -1) {
     const octokit = new Octokit();
@@ -20,9 +21,9 @@ const getRepositoryCommits = async function (owner, repo, pageSize = -1, pageNum
         // Map response into object that can be used by Views
         if (response.data) {
             resultArray = response.data.map(item => ({
-                hash: item.sha,
-                author: item.author.login,
-                message: item.commit.message
+                hash: _.get(item, 'sha', ''),
+                author: _.get(item, 'author.login', ''),
+                message: _.get(item, 'commit.message', '')
             }));
         }
     } catch (fetchError) {
