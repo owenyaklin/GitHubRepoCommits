@@ -4,6 +4,7 @@ const getRepositoryCommits = async function (owner, repo, pageSize = -1, pageNum
     const octokit = new Octokit();
     let resultArray = [];
     let pageString = '';
+    // Add pagination params if requested
     if (pageSize !== -1) {
         pageString = `?per_page=${pageSize}`;
         if (pageNumber !== -1) {
@@ -11,10 +12,12 @@ const getRepositoryCommits = async function (owner, repo, pageSize = -1, pageNum
         }
     }
     try {
+        // Make call to GitHub API
         const response = await octokit.request(`GET /repos/{owner}/{repo}/commits${pageString}`, {
             owner: owner,
             repo: repo
         });
+        // Map response into object that can be used by Views
         if (response.data) {
             resultArray = response.data.map(item => ({
                 hash: item.sha,
