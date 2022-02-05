@@ -89,11 +89,12 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#f6f6f6',
     alignItems: 'center',
+    backgroundColor: '#20232a',
     paddingTop: Constants.statusBarHeight
   },
   titleText: {
+    color: '#ebedf0',
     fontSize: 20,
     fontWeight: 'bold',
     textAlign: 'center'

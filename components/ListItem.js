@@ -1,5 +1,4 @@
 import { StyleSheet, Text, View } from 'react-native';
-import { borderColor } from 'react-native/Libraries/Components/View/ReactNativeStyleAttributes';
 
 export default function ListItem({ item }) {
     return (
@@ -26,10 +25,9 @@ const styles = StyleSheet.create({
         fontSize: 20
     },
     listItemView: {
-        backgroundColor: '#e0e0e0',
-        borderColor: '#000000',
+        backgroundColor: 'rgba(100,215,255,.4)',
         borderRadius: 5,
-        borderWidth: 1,
-        margin: 3
+        margin: 3,
+        padding: 2
     }
 });
