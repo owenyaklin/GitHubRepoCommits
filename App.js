@@ -71,7 +71,7 @@ export default function App() {
   return (
     <SafeAreaView style={styles.container}>
       <View>
-        <Text>Most recent commits for {githubOwner}/{githubRepo}</Text>
+        <Text style={styles.titleText}>Most recent commits for {githubOwner}/{githubRepo}</Text>
       </View>
       <FlatList
         data={commits}
@@ -89,8 +89,13 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#f6f6f6',
     alignItems: 'center',
     paddingTop: Constants.statusBarHeight
   },
+  titleText: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    textAlign: 'center'
+  }
 });
